@@ -1,0 +1,168 @@
+/* day2/style.css */
+
+/* 1. Box-sizing reset - makes width/height calculations include padding
+   and border, so layout math doesn't get surprising extra space added. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* 2. Header styles */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+}
+
+/* 3. Nav bar with Flexbox: centred row, 16px gap, white text, no
+   underline, with a visible (but non-underline) hover style.
+   Both selectors below are included since Day 1 markup commonly puts
+   nav links either directly in <nav> or wrapped in a <ul> inside it -
+   whichever structure your HTML actually uses, this covers it. */
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 4. Centred main with a maximum width; each section gets a white card look */
+main {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+main section {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* 5. Features list as a responsive grid of cards - exact formula specified */
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.features li {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+}
+
+/* 6a. Shortcuts table - borders and padding on cells */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f0f0f0;
+}
+
+/* 6b. Feedback form - fields stacked vertically, full width */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* 7. Buttons - hover effect with transition */
+button {
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #1a252f;
+  transform: translateY(-1px);
+}
+
+/* 8. Media query - smaller header on small screens */
+@media (max-width: 600px) {
+  header {
+    padding: 12px 8px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
