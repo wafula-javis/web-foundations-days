@@ -1,0 +1,64 @@
+/* day4/style.css */
+ 
+/* Colours defined once as CSS variables - the dark theme below only
+   needs to redefine these, not duplicate every rule that uses them. */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --accent-color: #2c3e50;
+  --border-color: #cccccc;
+}
+ 
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --accent-color: #4a90d9;
+  --border-color: #555555;
+}
+ 
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 24px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+ 
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+ 
+#note-text {
+  width: 100%;
+  max-width: 500px;
+  padding: 8px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+  font-size: 1rem;
+}
+ 
+button {
+  padding: 8px 16px;
+  margin-top: 8px;
+  margin-right: 8px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+ 
+/* Character counter states */
+.warning {
+  color: orange;
+}
+ 
+.over {
+  color: red;
+  font-weight: bold;
+}
+ 
